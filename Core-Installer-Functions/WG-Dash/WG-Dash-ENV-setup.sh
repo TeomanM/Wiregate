@@ -23,7 +23,7 @@ update_server_ip() {
     done
     
     if [ $timer -le 0 ] && [ "$user_activity" = false ]; then
-        ip=$(curl -s ifconfig.me)
+        ip=$(curl -s -4 ifconfig.me)
         export WG_DASH_SERVER_IP="$ip"
     fi
 
